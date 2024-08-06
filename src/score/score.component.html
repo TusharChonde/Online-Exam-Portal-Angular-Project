@@ -1,0 +1,58 @@
+<!-- <span style="color: red;font-size: 30px;">your score is {{score}}</span>
+
+<table>
+
+
+    <tr>
+    
+        <th>qno</th>
+        
+        <th>question</th>
+        
+        <th>submittedAnswer</th>
+        
+        <th>OriginalAnswer</th>
+    
+    </tr>
+    
+    <tr *ngFor="let answer of allanswers" [style.background]="getColor(answer.submittedAnswer,answer.originalAnswer)">
+    
+        <td>{{answer.qno}}</td>
+    
+        <td>{{answer.qtext}}</td>
+    
+        <td>{{answer.submittedAnswer}}</td>
+    
+        <td>{{answer.originalAnswer}}</td>
+    
+    </tr>
+    
+    </table>
+    
+     -->
+
+
+
+     <div class="score-component">
+        <h2>Your Score is <span>{{ score }}</span></h2>
+    
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Question No</th>
+                    <th>Question</th>
+                    <th>Your Answer</th>
+                    <th>Correct Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let answer of allanswers" [style.background]="getColor(answer.submittedAnswer, answer.originalAnswer)">
+                    <td>{{ answer.qno }}</td>
+                    <td>{{ answer.qtext }}</td>
+                    <td>{{ answer.submittedAnswer }}</td>
+                    <td>{{ answer.originalAnswer }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    

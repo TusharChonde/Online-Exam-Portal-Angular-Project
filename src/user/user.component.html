@@ -1,0 +1,50 @@
+<Head><link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></Head>
+<br><br>
+
+
+<div class="Container">
+    <span id="login"  >Register</span>  <br> <br>
+Username: <input  type="text" name="username" placeholder="Enter Username" [(ngModel)]="user.username"><br><br>
+
+Password: <input type="password" name="password" placeholder="Enter Password" [(ngModel)]="user.password"><br><br>
+
+Mobile No: <input type="number" name="mobno" placeholder="Enter mobno" [(ngModel)]="user.mobno"><br><br>
+
+Email Id: <input type="email" name="emailid" placeholder="Enter Emailid" [(ngModel)]="user.emailid"><br><br>
+
+
+<input type="submit" id="a" value="saveUser" (click)="saveUser()">
+
+ <input type="submit" id="b" value="deleteUser" (click)="deleteUser()"> </div>
+
+{{message}}
+
+<table>
+
+
+<!-- <tr>
+
+    <th>username</th>
+    
+    <th>password</th>
+    
+    <th>emailid</th>
+    
+    <th>mobno</th>
+
+</tr> -->
+
+<!-- <tr *ngFor="let user of users">
+
+    <td>{{user.username}}</td>
+
+    <td>{{user.password}}</td>
+
+    <td>{{user.emailid}}</td>
+
+    <td>{{user.mobno}}</td>
+
+</tr>
+
+</table> -->
+

@@ -1,0 +1,77 @@
+table,td,th
+{
+    border: 1px solid blueviolet;
+}
+
+td,th
+{
+    padding: 10px;
+}
+
+.Container{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+   
+}
+.userButton{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+#a:hover {
+    background-color: #45a049;
+  }
+  #b:hover {
+    background-color: #45a049;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="email"]
+   {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  #a{
+    margin-right: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: white;
+  }
+  #b{
+    margin-right: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: white;
+  }
+  #login{
+    font-size: 25px;
+    font-weight: bold;
+    
+  }

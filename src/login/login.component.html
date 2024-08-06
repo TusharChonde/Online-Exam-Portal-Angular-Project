@@ -1,0 +1,56 @@
+
+<body>
+  <div id="im"></div>  
+  <!-- <img src="../assets/images/e.jpg" alt=""> -->
+  
+    <div class="login-container">
+      <h2>Login</h2>
+      <form (ngSubmit)="validate()" #loginForm="ngForm">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Enter username" [(ngModel)]="user.username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" [(ngModel)]="user.password" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <select id="subject" name="subject" [(ngModel)]="subject" required>
+            <option value="maths">Maths</option>
+            <option value="java">Java</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+      {{ message }} </div>
+    
+  </body>
+  
+
+<!-- 
+<body>
+    
+    <form>
+            
+        <input type="text" name="username" placeholder="Enter username" [(ngModel)]="user.username"><br><br>
+        
+        <input  type="password" name="password" placeholder="Enter password" [(ngModel)]="user.password"><br><br>
+        
+        <br><br>
+
+        <select name="subject" [(ngModel)]="subject">
+            <option value="maths">maths</option>
+            <option value="java">java</option>
+    </select>
+
+    <br><br>
+    
+        <input type=button value=login (click)="validate()" class="btn">
+   
+        
+    </form>
+    
+    {{message}}
+
+    </body>  -->

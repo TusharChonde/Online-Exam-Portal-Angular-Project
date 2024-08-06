@@ -1,0 +1,58 @@
+/* table,td,th
+{
+    border: 1px solid blueviolet;
+}
+
+td,th
+{
+    padding: 10px;
+} */
+
+
+
+.score-component {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.score-component h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.score-component h2 span {
+    color: #ff5f5f; /* Red color for score */
+}
+
+.score-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.score-table th, .score-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.score-table th {
+    background-color: #f2f2f2;
+    color: #555;
+}
+
+.score-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.score-table tbody tr:hover {
+    background-color: #e9f5ff; /* Light blue on hover */
+}
+

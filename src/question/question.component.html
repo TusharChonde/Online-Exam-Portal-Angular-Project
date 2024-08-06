@@ -1,0 +1,237 @@
+<!-- <html>
+
+<body>
+
+
+
+<span style="color:red;position: fixed;top:55px;right:20px">{{durationMessage}}</span>
+
+<p>welcome {{username}}</p>
+
+<form name="questionForm">
+    
+    <input type="text"  name="qno" [(ngModel)]="question.qno" ><br><br>
+    <input type="text"   name="qtext" [(ngModel)]="question.qtext"><br><br>
+    
+    <br><br>
+      
+    <input  name="options" type="radio"  [checked]="compare2(question.op1)" (change)="saveAnswer()" [value]="question.op1" [(ngModel)]="submittedAnswer" class="css-checkbox" name="radioModel" [(ngModel)]="selected" ><span [style.color]="compare(question.op1)">{{question.op1}}</span><br><br>
+    <input  name="options" type="radio"  [checked]="compare2(question.op2)" (change)="saveAnswer()" [value]="question.op2" [(ngModel)]="submittedAnswer" class="css-checkbox" name="radioModel" [(ngModel)]="selected" ><span [style.color]="compare(question.op2)">{{question.op2}}</span><br><br> 
+    <input  name="options" type="radio"  [checked]="compare2(question.op3)" (change)="saveAnswer()" [value]="question.op3" [(ngModel)]="submittedAnswer" class="css-checkbox" name="radioModel" [(ngModel)]="selected" ><span [style.color]="compare(question.op3)">{{question.op3}}</span><br><br> 
+    <input  name="options" type="radio"  [checked]="compare2(question.op4)" (change)="saveAnswer()" [value]="question.op4" [(ngModel)]="submittedAnswer" class="css-checkbox" name="radioModel" [(ngModel)]="selected" ><span [style.color]="compare(question.op4)">{{question.op4}}</span><br><br>
+
+    <input  type="hidden" name="originalAnswer" [(ngModel)]="question.answer"><br><br>
+
+    <input type="button" value="next" (click)="nextQuestion()" >
+
+    <input type="button" value="previous" (click)="previousQuestion()" >
+
+    <input type="button" value="endexam" (click)="endexam()" >    
+
+</form>
+
+
+
+</body>
+
+</html> -->
+
+
+
+<!-- <img style="position: absolute;top:150px;right:100px" src="assets/images/1.jpg" width="100px height=100px"> -->
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Page</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+
+        main {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: rgb(4, 4, 4);
+            font-size: 18px;
+            display: block; 
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-weight: bold;
+            color: rgb(64, 0, 255);
+            font-size: 18px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: left;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="radio"]  {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #button-container {
+           
+            
+        }
+        #a{
+            margin-left: 100px;
+            padding-top: ;
+            
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+        input[type="button"]{
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        #b{
+            margin-left: 1100px; 
+        }
+        #time{
+            margin-top: 125px;
+            margin-right: 50px;
+            font-size: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Exam Portal</h1>
+        <p>Welcome, {{ username }}</p>
+        <span id="time" style="color:red;position: fixed;top:55px;right:20px">{{durationMessage}}</span>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <div class="question">
+            <form name="questionForm">
+                <label class="question-number">Q. {{ question.qno }}</label><br><br>
+                <input type="text" name="qno" [(ngModel)]="question.qno" style="display: none;">
+                <label class="question-text">{{ question.qtext }}</label><br><br>
+
+                <div class="option">
+                    <input type="radio" name="options" [checked]="compare2(question.op1)" (change)="saveAnswer()"
+                        [value]="question.op1" [(ngModel)]="submittedAnswer">
+                    <span [style.color]="compare(question.op1)">{{ question.op1 }}</span>
+                </div>
+                <div class="option">
+                    <input type="radio" name="options" [checked]="compare2(question.op2)" (change)="saveAnswer()"
+                        [value]="question.op2" [(ngModel)]="submittedAnswer">
+                    <span [style.color]="compare(question.op2)">{{ question.op2 }}</span>
+                </div>
+                <div class="option">
+
+                    <input type="radio" name="options" [checked]="compare2(question.op3)" (change)="saveAnswer()"
+                        [value]="question.op3" [(ngModel)]="submittedAnswer">
+                    <span [style.color]="compare(question.op3)">{{ question.op3 }}</span>
+                </div>
+                <div class="option">
+                    <input type="radio" name="options" [checked]="compare2(question.op4)" (change)="saveAnswer()"
+                        [value]="question.op4" [(ngModel)]="submittedAnswer">
+                    <span [style.color]="compare(question.op4)">{{ question.op4 }}</span>
+                </div>
+
+                <input type="hidden" name="originalAnswer" [(ngModel)]="question.answer">
+
+                <span id="button-container">
+                    <input type="button" value="Previous Question" (click)="previousQuestion()"></span>
+                    <span id="a" >
+                    <input type="button" value="Next Question" (click)="nextQuestion()"></span>
+                    <div id="b">
+                    <input type="button" value="End Exam" (click)="endexam()"></div>
+                
+            </form>
+        </div>
+    </main>
+
+    <!-- Optional: Footer -->
+    <footer>
+        &copy; 2024 Exam Portal. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
+
+
